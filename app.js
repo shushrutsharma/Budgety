@@ -120,7 +120,7 @@ var UIController = (function() {
         incomeLabel: '.budget__income--value',
         expensesLabel: '.budget__expenses--value',
         percentageLabel: '.budget__expenses--percentage',
-
+        container: '.container',
     };
 
     return {
@@ -213,6 +213,8 @@ var controller = (function(budgetctrl, UIctrl) {
             }
         });
 
+        document.querySelector('.container').addEventListener('click ', ctrlDeleteItem);
+
     };
 
     var updateBudget = function() {
@@ -251,6 +253,30 @@ var controller = (function(budgetctrl, UIctrl) {
         }
 
     };
+
+
+    var ctrlDeleteItem = function(event) {
+
+        var itemID, splitID, type, ID;
+
+        iteID = (event.target.parentNode.parentNode.parentNode.parentNode.id);
+
+        if (itemID) {
+
+            // inc-1
+            splitID = itemID.split('-');
+            type = splitID[0];
+            ID = split[1];
+
+            // 1. delete the item from the data structure
+
+            // 2. delete the item from the UI
+
+            // 3. update and show new budget
+
+        }
+
+    }
 
     return {
         init: function() {
